@@ -9,10 +9,15 @@ public class Main {
         //intput
         int n = in.nextInt();
         long row, coloumn;
-        for(coloumn=n-1;coloumn<=2*n-1;coloumn++){
-            for(row=n-1;row<=2*n-1; row++){
-                //if(Math.abs())
-                System.out.print((char)(65+row-coloumn)+" ");
+        for(coloumn=-n+1;coloumn<n;coloumn++){
+            for(row=-n+1;row<n; row++){
+                //condition for non-empty blocks
+                if(Math.abs(row)+1 >= n-Math.abs(coloumn)){
+                    System.out.print((char)(64+(n-Math.abs(row)))+" ");
+                }
+                else {
+                    System.out.print("  ");
+                }
             }
             System.out.println();
         }
